@@ -39,7 +39,7 @@ def predict():
         model.eval()
         outputs = model(image_tensor)
         _, predicted = torch.max(outputs, 1)
-        labels = ['chair', 'sofa', 'bed']
+        labels = ['bed','chair', 'sofa']
         result = labels[predicted[0].item()]
 
 
