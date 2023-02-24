@@ -18,15 +18,10 @@ jobs:
         context: .
         push: true
         tags: username/repository-name:latest
-
-    - name: Deploy to server
-      uses: appleboy/ssh-action@v0.1.7
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        script: |
-          docker pull username/repository-name:latest
-          docker stop container-name || true
-          docker rm container-name || true
-          docker run -d --name container-name -p 5000:5000 username/repository-name:latest
+        
+    - name: Run Docker container
+      run: |
+        docker pull cjbbt12/fulhaus_223:latest
+        docker stop fulhaus_223 || true
+        docker rm fulhaus_223 || true
+        docker run -d --name fulhaus_223 -p 5000:5000 cjbbt12/fulhaus_223:latest
