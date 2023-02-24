@@ -21,7 +21,7 @@ jobs:
         
     - name: Run Docker container
       run: |
-        docker pull cjbbt12/fulhaus_223:latest
-        docker stop fulhaus_223 || true
-        docker rm fulhaus_223 || true
-        docker run -d --name fulhaus_223 -p 5000:5000 cjbbt12/fulhaus_223:latest
+        docker pull cjbbt12/Fulhaus:latest
+        docker stop Fulhaus || true
+        docker rm Fulhaus || true
+        docker run -d --name Fulhaus -p 5000:5000 cjbbt12/Fulhaus:latest
