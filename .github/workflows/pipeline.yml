@@ -20,7 +20,7 @@ jobs:
         tags: username/repository-name:latest
 
     - name: Deploy to server
-      uses: appleboy/ssh-action@v0.3.0
+      uses: appleboy/ssh-action@v0.1.7
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
